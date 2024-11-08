@@ -9,13 +9,7 @@ function UsernameChanger() {
   };
 
   const handleSubmit = () => {
-    const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 30);
-    const usernameData = {
-      value: username,
-      expires: expirationDate.toISOString(),
-    };
-    localStorage.setItem("username", JSON.stringify(usernameData));
+    localStorage.setItem("username", username);
     alert(`Username changed to: ${username}`);
     setUsername(""); // Clear the input after submitting
   };
